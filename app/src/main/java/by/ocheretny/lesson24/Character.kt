@@ -11,3 +11,4 @@ data class Character(
     var kD: Double = countKills.toDouble() / countGames - countWins
 }
 
+

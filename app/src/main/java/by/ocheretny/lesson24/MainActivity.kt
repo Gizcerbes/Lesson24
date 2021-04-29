@@ -13,7 +13,9 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction().replace(R.id.conteiner_main, FragmentShowRating())
 
-
+        viewModel.selectedCharacter.observe(this){
+            supportFragmentManager.beginTransaction().replace(R.id.conteiner_main, FragmentUpdateCharacter())
+        }
 
     }
 }
