@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
 
 class FragmentShowRating:Fragment() {
     lateinit var viewModel: MainViewModel
@@ -22,7 +23,11 @@ class FragmentShowRating:Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
 
-        val recycler = view.findViewById<ConstraintLayout>(R.id.recycler)
+        val recycler = view.findViewById<RecyclerView>(R.id.recycler)
+
+        val charactersAdapter = CharacterAdapter(viewModel.characters)
+
+        recycler.adapter = charactersAdapter
 
 
     }

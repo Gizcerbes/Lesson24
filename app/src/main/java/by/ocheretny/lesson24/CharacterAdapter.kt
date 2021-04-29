@@ -13,6 +13,8 @@ import com.squareup.picasso.Picasso
 class CharacterAdapter(val characters: List<Character>) :
     RecyclerView.Adapter<CharacterAdapter.CharacterViewHolder>() {
 
+    val viewModel = MainViewModel()
+
     inner class CharacterViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         fun setData(itemView: View, position: Int) {
              val character = characters[position]
@@ -21,7 +23,7 @@ class CharacterAdapter(val characters: List<Character>) :
             itemView.findViewById<TextView>(R.id.win_reit).text = character.winReit.toString()
             itemView.findViewById<TextView>(R.id.kills_deaths).text = character.kD.toString()
             itemView.findViewById<ConstraintLayout>(R.id.character_container).setOnClickListener{
-
+                viewModel.selectedCharacter.value = character
             }
         }
     }
