@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Lesson24</string>
     <string name="url">Url</string>
+    <string name="update">Update</string>
 </resources>
