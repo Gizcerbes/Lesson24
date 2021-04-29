@@ -5,7 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 
 class CharacterAdapter(val characters: List<Character>) :
@@ -18,6 +20,9 @@ class CharacterAdapter(val characters: List<Character>) :
             itemView.findViewById<TextView>(R.id.name).text = character.name
             itemView.findViewById<TextView>(R.id.win_reit).text = character.winReit.toString()
             itemView.findViewById<TextView>(R.id.kills_deaths).text = character.kD.toString()
+            itemView.findViewById<ConstraintLayout>(R.id.character_container).setOnClickListener{
+
+            }
         }
     }
 
