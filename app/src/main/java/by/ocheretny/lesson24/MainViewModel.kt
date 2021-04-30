@@ -13,4 +13,6 @@ class MainViewModel : ViewModel() {
 
     val addCharacter = MutableLiveData<Character>()
 
+    val openAddFragment = MutableLiveData<Unit>()
+
 }

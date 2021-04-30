@@ -8,6 +8,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class FragmentShowRating : Fragment() {
     val viewModel: MainViewModel by lazy { ViewModelProvider(requireActivity()).get(MainViewModel::class.java) }
@@ -27,6 +28,10 @@ class FragmentShowRating : Fragment() {
         val charactersAdapter = CharacterAdapter(viewModel)
 
         recycler.adapter = charactersAdapter
+
+        view.findViewById<FloatingActionButton>(R.id.floating_action_button).setOnClickListener {
+            viewModel.openAddFragment.value = Unit
+        }
 
 
     }

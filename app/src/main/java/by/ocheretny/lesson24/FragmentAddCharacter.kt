@@ -30,7 +30,7 @@ class FragmentAddCharacter : Fragment() {
         val plusWins = view.findViewById<TextInputLayout>(R.id.plus_wins)
         val plusKills = view.findViewById<TextInputLayout>(R.id.plus_kills)
 
-        view.findViewById<Button>(R.id.character_update_button).setOnClickListener {
+        view.findViewById<Button>(R.id.character_add_button).setOnClickListener {
             val character = Character(
                 changeName.editText?.text.toString(),
                 changePhoto.editText?.text.toString(),
@@ -39,6 +39,7 @@ class FragmentAddCharacter : Fragment() {
                 plusWins.editText?.text.toString().toInt()
             )
             viewModel.characters.add(character)
+            viewModel.addCharacter.value = character
         }
 
     }
