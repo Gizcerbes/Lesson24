@@ -24,7 +24,6 @@ class FragmentUpdateCharacter : Fragment() {
         val plusGames = view.findViewById<TextInputLayout>(R.id.plus_games)
         val plusWins = view.findViewById<TextInputLayout>(R.id.plus_wins)
         val plusKills = view.findViewById<TextInputLayout>(R.id.plus_kills)
-
         val character : Character?  = viewModel.selectedCharacter.value
 
         changePhoto.editText?.setText(character?.photoURL)

@@ -1,17 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/change_name"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/name"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_margin="16dp"
+        android:gravity="center"
+        android:text="@string/add_a_new_character"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/change_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/change_name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_character_name"
+        app:layout_constraintBottom_toTopOf="@+id/change_photo"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -21,11 +38,14 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/change_photo"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/url"
-        app:layout_constraintTop_toBottomOf="@id/change_name"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="16dp"
+        android:hint="@string/enter_url_of_character_photo"
+        app:layout_constraintBottom_toTopOf="@+id/plus_games"
+        app:layout_constraintTop_toBottomOf="@+id/change_name"
+        tools:layout_editor_absoluteX="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -35,43 +55,55 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/plus_games"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="@string/plus_games"
-        app:layout_constraintTop_toBottomOf="@id/change_photo">
+        android:hint="@string/enter_count_of_games"
+        app:layout_constraintBottom_toTopOf="@+id/plus_wins"
+        app:layout_constraintTop_toBottomOf="@+id/change_photo"
+        tools:layout_editor_absoluteX="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="number" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/plus_wins"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="@string/plus_wins"
-        app:layout_constraintTop_toBottomOf="@id/plus_games">
+        android:hint="@string/enter_count_of_wins"
+        app:layout_constraintBottom_toTopOf="@+id/plus_kills"
+        app:layout_constraintTop_toBottomOf="@+id/plus_games"
+        tools:layout_editor_absoluteX="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="number" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/plus_kills"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="@string/plus_kills"
-        app:layout_constraintTop_toBottomOf="@id/plus_wins">
+        android:hint="@string/enter_count_of_kills"
+        app:layout_constraintBottom_toTopOf="@+id/character_add_button"
+        app:layout_constraintTop_toBottomOf="@+id/plus_wins"
+        tools:layout_editor_absoluteX="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="number" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -80,7 +112,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/add"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plus_kills"
+        tools:layout_editor_absoluteX="16dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,7 @@ data class Character(
     var countWins: Int = 0
 ) {
     var winReit: Double = (countWins.toDouble() * 100) / countGames
-    var kD: Double = countKills.toDouble() / countGames - countWins
+    var kD: Double = countKills.toDouble() / (countGames - countWins)
 }
 
 
