@@ -57,13 +57,13 @@ class FragmentAddCharacter : Fragment() {
         if (changeName.editText?.text.isNullOrEmpty()) {
             changeName.editText?.error = getString(R.string.error_empty_name)
         } else {
-            changeName.editText?.error = ""
+            changeName.editText?.error = null
         }
 
         if (changePhoto.editText?.text.isNullOrEmpty()) {
             changePhoto.editText?.error = getString(R.string.error_empty_url)
         } else {
-            changePhoto.editText?.error = ""
+            changePhoto.editText?.error = null
         }
 
         try {
@@ -71,7 +71,7 @@ class FragmentAddCharacter : Fragment() {
             if (i <= 0) {
                 plusGames.editText?.error = "Cannot be less than 1"
             } else {
-                plusGames.editText?.error = ""
+                plusGames.editText?.error = null
             }
         } catch (e: Exception) {
             plusGames.editText?.error = e.toString()
@@ -82,7 +82,7 @@ class FragmentAddCharacter : Fragment() {
             if (i <= 0) {
                 plusWins.editText?.error = "Cannot be less than 1"
             } else {
-                plusWins.editText?.error = ""
+                plusWins.editText?.error = null
             }
         } catch (e: Exception) {
             plusWins.editText?.error = e.toString()
@@ -93,7 +93,7 @@ class FragmentAddCharacter : Fragment() {
             if (i <= 0) {
                 plusKills.editText?.error = "Cannot be less than 1"
             } else {
-                plusKills.editText?.error = ""
+                plusKills.editText?.error = null
             }
         } catch (e: Exception) {
             plusKills.editText?.error = e.toString()
