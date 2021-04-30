@@ -16,7 +16,15 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().replace(R.id.container_main, FragmentShowRating()).commit()
 
         viewModel.selectedCharacter.observe(this){
-            supportFragmentManager.beginTransaction().replace(R.id.conteiner_main, FragmentUpdateCharacter()).commit()
+            supportFragmentManager.beginTransaction().replace(R.id.container_main, FragmentUpdateCharacter()).commit()
+        }
+
+        viewModel.updatesCharacter.observe(this){
+            supportFragmentManager.beginTransaction().replace(R.id.container_main, FragmentShowRating()).commit()
+        }
+
+        viewModel.addCharacter.observe(this){
+            supportFragmentManager.beginTransaction().replace(R.id.container_main, FragmentShowRating()).commit()
         }
 
         viewModel.openAddFragment.observe(this){
