@@ -10,9 +10,18 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.textfield.TextInputLayout
 
 class FragmentUpdateCharacter : Fragment() {
-    val viewModel by lazy { ViewModelProvider(requireActivity()).get(MainViewModel::class.java) }
+    private val viewModel by lazy { ViewModelProvider(requireActivity()).get(MainViewModel::class.java) }
+    private lateinit var changePhoto: TextInputLayout
+    private lateinit var plusGames: TextInputLayout
+    private lateinit var plusWins: TextInputLayout
+    private lateinit var plusKills: TextInputLayout
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_update_character, container, false)
     }
 
@@ -20,12 +29,11 @@ class FragmentUpdateCharacter : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val changePhoto = view.findViewById<TextInputLayout>(R.id.change_photo)
-        val plusGames = view.findViewById<TextInputLayout>(R.id.plus_games)
-        val plusWins = view.findViewById<TextInputLayout>(R.id.plus_wins)
-        val plusKills = view.findViewById<TextInputLayout>(R.id.plus_kills)
-
-        val character : Character?  = viewModel.selectedCharacter.value
+        changePhoto = view.findViewById<TextInputLayout>(R.id.change_photo)
+        plusGames = view.findViewById<TextInputLayout>(R.id.plus_games)
+        plusWins = view.findViewById<TextInputLayout>(R.id.plus_wins)
+        plusKills = view.findViewById<TextInputLayout>(R.id.plus_kills)
+        val character: Character? = viewModel.selectedCharacter.value
 
         changePhoto.editText?.setText(character?.photoURL)
         plusGames.editText?.setText("0")
@@ -33,11 +41,71 @@ class FragmentUpdateCharacter : Fragment() {
         plusKills.editText?.setText("0")
 
         view.findViewById<Button>(R.id.character_update_button).setOnClickListener {
+            if (verif()) return@setOnClickListener
+
             character?.photoURL = changePhoto.editText?.text.toString()
-            character?.countGames = character?.countGames?.plus(plusGames.editText?.text.toString().toInt())!!
-            character?.countKills = character?.countKills?.plus(plusKills.editText?.text.toString().toInt())!!
-            character?.countWins = character?.countWins?.plus(plusWins.editText?.text.toString().toInt())!!
+            character?.countGames =
+                character?.countGames?.plus(plusGames.editText?.text.toString().toInt())!!
+            character?.countKills =
+                character?.countKills?.plus(plusKills.editText?.text.toString().toInt())!!
+            character?.countWins =
+                character?.countWins?.plus(plusWins.editText?.text.toString().toInt())!!
             viewModel.updatesCharacter.value = character
         }
+
+        view.findViewById<Button>(R.id.character_back_button).setOnClickListener {
+            viewModel.addCharacter.value = character
+        }
+    }
+
+    private fun verif(): Boolean {
+        if (changePhoto.editText?.text.isNullOrEmpty()) {
+            changePhoto.editText?.error = getString(R.string.error_empty_url)
+        } else {
+            changePhoto.editText?.error = null
+        }
+
+        try {
+            val i = plusGames.editText?.text.toString().toInt()
+            if (i < 0) {
+                plusGames.editText?.error = getString(R.string.not_be_less_than_0)
+            } else {
+                plusGames.editText?.error = null
+            }
+        } catch (e: NumberFormatException) {
+            plusGames.editText?.error = getString(R.string.error_empty_field)
+        } catch (e :Exception){
+            plusGames.editText?.error = e.toString()
+        }
+
+        try {
+            val i = plusWins.editText?.text.toString().toInt()
+            if (i < 0) {
+                plusWins.editText?.error = getString(R.string.not_be_less_than_0)
+            } else {
+                plusWins.editText?.error = null
+            }
+        } catch (e: NumberFormatException) {
+            plusWins.editText?.error = getString(R.string.error_empty_field)
+        } catch (e :Exception){
+            plusWins.editText?.error = e.toString()
+        }
+
+        try {
+            val i = plusKills.editText?.text.toString().toInt()
+            if (i < 0) {
+                plusKills.editText?.error = getString(R.string.not_be_less_than_0)
+            } else {
+                plusKills.editText?.error = null
+            }
+        } catch (e: NumberFormatException) {
+            plusKills.editText?.error = getString(R.string.error_empty_field)
+        } catch (e :Exception){
+            plusKills.editText?.error = e.toString()
+        }
+        return !changePhoto.editText?.error.isNullOrEmpty() ||
+                !plusGames.editText?.error.isNullOrEmpty() ||
+                !plusWins.editText?.error.isNullOrEmpty() ||
+                !plusKills.editText?.error.isNullOrEmpty()
     }
 }

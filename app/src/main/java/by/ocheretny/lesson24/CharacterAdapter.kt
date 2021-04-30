@@ -20,8 +20,15 @@ class CharacterAdapter(val viewModel: MainViewModel) :
             Picasso.get().load(character.photoURL)
                 .into(itemView.findViewById<ImageView>(R.id.photo))
             itemView.findViewById<TextView>(R.id.name).text = character.name
-            itemView.findViewById<TextView>(R.id.win_reit).text = character.winReit.toString()
-            itemView.findViewById<TextView>(R.id.kills_deaths).text = character.kD.toString()
+            itemView.findViewById<TextView>(R.id.win_reit).text =
+                "${view.context.getString(R.string.percentageOfWins)} ${
+                    String.format(
+                        "%.2f",
+                        character.winReit
+                    )
+                }  ${view.context.getString(R.string.percent)}"
+            itemView.findViewById<TextView>(R.id.kills_deaths).text =
+                "${view.context.getString(R.string.KD)} ${String.format("%.2f", character.kD)}  "
             itemView.findViewById<ConstraintLayout>(R.id.character_container).setOnClickListener {
                 viewModel.selectedCharacter.value = character
             }
