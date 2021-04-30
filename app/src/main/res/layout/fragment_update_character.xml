@@ -97,9 +97,18 @@
             android:id="@+id/character_update_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="@string/update"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/plus_kills"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <Button
+            android:id="@+id/character_back_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/back"
+            app:layout_constraintTop_toBottomOf="@+id/character_update_button"
             tools:layout_editor_absoluteX="16dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

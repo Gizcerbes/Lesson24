@@ -52,6 +52,10 @@ class FragmentUpdateCharacter : Fragment() {
                 character?.countWins?.plus(plusWins.editText?.text.toString().toInt())!!
             viewModel.updatesCharacter.value = character
         }
+
+        view.findViewById<Button>(R.id.character_back_button).setOnClickListener {
+            viewModel.addCharacter.value = character
+        }
     }
 
     private fun verif(): Boolean {

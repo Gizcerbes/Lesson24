@@ -51,6 +51,10 @@ class FragmentAddCharacter : Fragment() {
             viewModel.characters.add(character)
             viewModel.addCharacter.value = character
         }
+
+        view.findViewById<Button>(R.id.character_back_button).setOnClickListener {
+            viewModel.addCharacter.value = Character("", "")
+        }
     }
 
     private fun verif() : Boolean{
