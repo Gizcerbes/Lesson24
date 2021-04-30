@@ -37,6 +37,7 @@ class FragmentUpdateCharacter : Fragment() {
             character?.countGames = character?.countGames?.plus(plusGames.editText?.text.toString().toInt())!!
             character?.countKills = character?.countKills?.plus(plusKills.editText?.text.toString().toInt())!!
             character?.countWins = character?.countWins?.plus(plusWins.editText?.text.toString().toInt())!!
+            viewModel.updatesCharacter.value = character
         }
     }
 }

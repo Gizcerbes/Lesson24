@@ -2,7 +2,9 @@ package by.ocheretny.lesson24
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.observe
 
 class MainActivity : AppCompatActivity() {
     val viewModel by lazy { ViewModelProvider(this).get(MainViewModel::class.java) }
@@ -11,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportFragmentManager.beginTransaction().replace(R.id.conteiner_main, FragmentShowRating()).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.container_main, FragmentShowRating()).commit()
 
         viewModel.selectedCharacter.observe(this){
             supportFragmentManager.beginTransaction().replace(R.id.conteiner_main, FragmentUpdateCharacter()).commit()
