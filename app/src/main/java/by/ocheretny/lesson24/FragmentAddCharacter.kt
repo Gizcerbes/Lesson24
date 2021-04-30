@@ -69,34 +69,41 @@ class FragmentAddCharacter : Fragment() {
         try {
             val i = plusGames.editText?.text.toString().toInt()
             if (i <= 0) {
-                plusGames.editText?.error = "Cannot be less than 1"
+                plusGames.editText?.error = getString(R.string.not_be_less_than_1)
             } else {
                 plusGames.editText?.error = null
             }
-        } catch (e: Exception) {
+        } catch (e: NumberFormatException) {
+            plusGames.editText?.error = getString(R.string.error_empty_field)
+        } catch (e :Exception){
             plusGames.editText?.error = e.toString()
         }
+
 
         try {
             val i = plusWins.editText?.text.toString().toInt()
             if (i < 0) {
-                plusWins.editText?.error = "Cannot be less than 1"
+                plusWins.editText?.error = getString(R.string.not_be_less_than_0)
             } else {
                 plusWins.editText?.error = null
             }
-        } catch (e: Exception) {
-            plusWins.editText?.error = e.toString()
+        } catch (e: NumberFormatException) {
+            plusGames.editText?.error = getString(R.string.error_empty_field)
+        } catch (e :Exception){
+            plusGames.editText?.error = e.toString()
         }
 
         try {
             val i = plusKills.editText?.text.toString().toInt()
             if (i < 0) {
-                plusKills.editText?.error = "Cannot be less than 1"
+                plusKills.editText?.error = getString(R.string.not_be_less_than_0)
             } else {
                 plusKills.editText?.error = null
             }
-        } catch (e: Exception) {
-            plusKills.editText?.error = e.toString()
+        } catch (e: NumberFormatException) {
+            plusGames.editText?.error = getString(R.string.error_empty_field)
+        } catch (e :Exception){
+            plusGames.editText?.error = e.toString()
         }
         return  !changeName.editText?.error.isNullOrEmpty() ||
                 !changePhoto.editText?.error.isNullOrEmpty() ||

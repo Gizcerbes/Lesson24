@@ -20,4 +20,7 @@
     <string name="KD">K/D - </string>
     <string name="error_empty_name">Error. Name cannot be empty</string>
     <string name="error_empty_url">URL cannot be empty</string>
+    <string name="not_be_less_than_1">Cannot be less than 1</string>
+    <string name="not_be_less_than_0">Cannot be less than 0</string>
+    <string name="error_empty_field">Error. Field is empty.</string>
 </resources>
