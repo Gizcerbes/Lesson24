@@ -1,11 +1,16 @@
 package by.ocheretny.lesson24
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
@@ -13,18 +18,22 @@ import com.squareup.picasso.Picasso
 class CharacterAdapter(val characters: List<Character>) :
     RecyclerView.Adapter<CharacterAdapter.CharacterViewHolder>() {
 
-    val viewModel = MainViewModel()
 
     inner class CharacterViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+
+        lateinit var viewModel: MainViewModel
+
         fun setData(itemView: View, position: Int) {
-             val character = characters[position]
-            Picasso.get().load(character.photoURL).into(itemView.findViewById<ImageView>(R.id.photo))
+            val character = characters[position]
+            Picasso.get().load(character.photoURL)
+                .into(itemView.findViewById<ImageView>(R.id.photo))
             itemView.findViewById<TextView>(R.id.name).text = character.name
             itemView.findViewById<TextView>(R.id.win_reit).text = character.winReit.toString()
             itemView.findViewById<TextView>(R.id.kills_deaths).text = character.kD.toString()
-            itemView.findViewById<ConstraintLayout>(R.id.character_container).setOnClickListener{
-                viewModel.selectedCharacter.value = character
+            itemView.findViewById<ConstraintLayout>(R.id.character_container).setOnClickListener {
+
             }
+
         }
     }
 

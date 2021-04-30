@@ -11,10 +11,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportFragmentManager.beginTransaction().replace(R.id.conteiner_main, FragmentShowRating())
+        supportFragmentManager.beginTransaction().replace(R.id.conteiner_main, FragmentShowRating()).commit()
 
         viewModel.selectedCharacter.observe(this){
-            supportFragmentManager.beginTransaction().replace(R.id.conteiner_main, FragmentUpdateCharacter())
+            supportFragmentManager.beginTransaction().replace(R.id.conteiner_main, FragmentUpdateCharacter()).commit()
         }
 
     }
