@@ -20,4 +20,6 @@
     <string name="change_the_character">Change the character</string>
     <string name="percent">%</string>
     <string name="KD">K/D - </string>
+    <string name="error_empty_name">Error. Name cannot be empty</string>
+    <string name="error_empty_url">URL cannot be empty</string>
 </resources>
