@@ -33,7 +33,6 @@ class FragmentShowRating : Fragment() {
             viewModel.openAddFragment.value = Unit
         }
 
-
     }
 
 
