@@ -12,11 +12,11 @@ import com.google.android.material.textfield.TextInputLayout
 class FragmentAddCharacter : Fragment() {
 
     val viewModel: MainViewModel by lazy { ViewModelProvider(requireActivity()).get(MainViewModel::class.java) }
-    lateinit var changeName: TextInputLayout
-    lateinit var changePhoto: TextInputLayout
-    lateinit var plusGames: TextInputLayout
-    lateinit var plusWins: TextInputLayout
-    lateinit var plusKills: TextInputLayout
+    private lateinit var changeName: TextInputLayout
+    private lateinit var changePhoto: TextInputLayout
+    private lateinit var plusGames: TextInputLayout
+    private lateinit var plusWins: TextInputLayout
+    private lateinit var plusKills: TextInputLayout
 
 
     override fun onCreateView(
