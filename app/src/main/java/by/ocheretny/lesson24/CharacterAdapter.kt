@@ -21,7 +21,7 @@ class CharacterAdapter(val viewModel: MainViewModel) :
                 .into(itemView.findViewById<ImageView>(R.id.photo))
             itemView.findViewById<TextView>(R.id.name).text = character.name
             itemView.findViewById<TextView>(R.id.win_reit).text =
-                " ${view.context.getString(R.string.percentageOfWins)} ${
+                "${view.context.getString(R.string.percentageOfWins)} ${
                     String.format(
                         "%.2f",
                         character.winReit
