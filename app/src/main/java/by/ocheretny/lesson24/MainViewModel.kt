@@ -9,5 +9,7 @@ class MainViewModel : ViewModel() {
 
     val selectedCharacter = MutableLiveData<Character>()
 
+    val updatesCharacter = MutableLiveData<Character>()
+
 
 }
