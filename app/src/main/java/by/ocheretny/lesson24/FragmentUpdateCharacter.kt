@@ -82,9 +82,9 @@ class FragmentUpdateCharacter : Fragment() {
                 plusWins.editText?.error = null
             }
         } catch (e: NumberFormatException) {
-            plusGames.editText?.error = getString(R.string.error_empty_field)
+            plusWins.editText?.error = getString(R.string.error_empty_field)
         } catch (e :Exception){
-            plusGames.editText?.error = e.toString()
+            plusWins.editText?.error = e.toString()
         }
 
         try {
@@ -95,9 +95,9 @@ class FragmentUpdateCharacter : Fragment() {
                 plusKills.editText?.error = null
             }
         } catch (e: NumberFormatException) {
-            plusGames.editText?.error = getString(R.string.error_empty_field)
+            plusKills.editText?.error = getString(R.string.error_empty_field)
         } catch (e :Exception){
-            plusGames.editText?.error = e.toString()
+            plusKills.editText?.error = e.toString()
         }
         return !changePhoto.editText?.error.isNullOrEmpty() ||
                 !plusGames.editText?.error.isNullOrEmpty() ||
