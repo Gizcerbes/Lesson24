@@ -11,5 +11,6 @@ class MainViewModel : ViewModel() {
 
     val updatesCharacter = MutableLiveData<Character>()
 
+    val addCharacter = MutableLiveData<Character>()
 
 }

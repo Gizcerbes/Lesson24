@@ -23,5 +23,9 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction().replace(R.id.container_main, FragmentShowRating()).commit()
         }
 
+        viewModel.addCharacter.observe(this){
+            supportFragmentManager.beginTransaction().replace(R.id.container_main, FragmentShowRating()).commit()
+        }
+
     }
 }
