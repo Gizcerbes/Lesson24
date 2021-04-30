@@ -79,7 +79,7 @@ class FragmentAddCharacter : Fragment() {
 
         try {
             val i = plusWins.editText?.text.toString().toInt()
-            if (i <= 0) {
+            if (i < 0) {
                 plusWins.editText?.error = "Cannot be less than 1"
             } else {
                 plusWins.editText?.error = null
@@ -90,7 +90,7 @@ class FragmentAddCharacter : Fragment() {
 
         try {
             val i = plusKills.editText?.text.toString().toInt()
-            if (i <= 0) {
+            if (i < 0) {
                 plusKills.editText?.error = "Cannot be less than 1"
             } else {
                 plusKills.editText?.error = null
