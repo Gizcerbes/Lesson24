@@ -10,19 +10,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 
-class CharacterAdapter(val characters: List<Character>) :
+class CharacterAdapter(val viewModel: MainViewModel) :
     RecyclerView.Adapter<CharacterAdapter.CharacterViewHolder>() {
 
-    val viewModel = MainViewModel()
 
     inner class CharacterViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         fun setData(itemView: View, position: Int) {
-             val character = characters[position]
-            Picasso.get().load(character.photoURL).into(itemView.findViewById<ImageView>(R.id.photo))
+            val character = viewModel.characters[position]
+            Picasso.get().load(character.photoURL)
+                .into(itemView.findViewById<ImageView>(R.id.photo))
             itemView.findViewById<TextView>(R.id.name).text = character.name
             itemView.findViewById<TextView>(R.id.win_reit).text = character.winReit.toString()
             itemView.findViewById<TextView>(R.id.kills_deaths).text = character.kD.toString()
-            itemView.findViewById<ConstraintLayout>(R.id.character_container).setOnClickListener{
+            itemView.findViewById<ConstraintLayout>(R.id.character_container).setOnClickListener {
                 viewModel.selectedCharacter.value = character
             }
         }
@@ -39,6 +39,6 @@ class CharacterAdapter(val characters: List<Character>) :
     }
 
     override fun getItemCount(): Int {
-        return characters.size
+        return viewModel.characters.size
     }
 }

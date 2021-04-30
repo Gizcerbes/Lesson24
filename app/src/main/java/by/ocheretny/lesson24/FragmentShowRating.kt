@@ -9,23 +9,24 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 
-class FragmentShowRating:Fragment() {
-    lateinit var viewModel: MainViewModel
+class FragmentShowRating : Fragment() {
+    val viewModel: MainViewModel by lazy { ViewModelProvider(requireActivity()).get(MainViewModel::class.java) }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.frafment_show_rating,container,false)
+        return inflater.inflate(R.layout.frafment_show_rating, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
 
         val recycler = view.findViewById<RecyclerView>(R.id.recycler)
 
-        val charactersAdapter = CharacterAdapter(viewModel.characters)
+        viewModel.characters.add(Character("name", "url"))
+
+        val charactersAdapter = CharacterAdapter(viewModel)
 
         recycler.adapter = charactersAdapter
 
