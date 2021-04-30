@@ -24,8 +24,6 @@ class FragmentShowRating : Fragment() {
 
         val recycler = view.findViewById<RecyclerView>(R.id.recycler)
 
-        viewModel.characters.add(Character("name", "url"))
-
         val charactersAdapter = CharacterAdapter(viewModel)
 
         recycler.adapter = charactersAdapter
