@@ -38,6 +38,7 @@ class FragmentAddCharacter : Fragment() {
                 plusKills.editText?.text.toString().toInt(),
                 plusWins.editText?.text.toString().toInt()
             )
+
             viewModel.characters.add(character)
             viewModel.addCharacter.value = character
         }
