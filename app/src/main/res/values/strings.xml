@@ -4,10 +4,7 @@
     <string name="update">Update</string>
     <string name="add">Add</string>
     <string name="name">Name</string>
-    <string name="plus_kills">plus_kills</string>
-    <string name="plus_wins">plus_wins</string>
-    <string name="plus_games">plus_games</string>
-    <string name="enter_count_of_wins">enter count of wins</string>
+    <string name="enter_count_of_wins">Enter count of wins</string>
     <string name="enter_new_url_of_character_photo">Enter new URL of character photo</string>
     <string name="enter_count_of_games_you_played">Enter count of games you played</string>
     <string name="enter_count_of_wins_you_made">Enter count of wins you made</string>
@@ -18,6 +15,7 @@
     <string name="enter_character_name">Enter character name</string>
     <string name="add_a_new_character">Add a new character</string>
     <string name="change_the_character">Change the character</string>
+    <string name="percentageOfWins">Winrate - </string>
     <string name="percent">%</string>
     <string name="KD">K/D - </string>
 </resources>
