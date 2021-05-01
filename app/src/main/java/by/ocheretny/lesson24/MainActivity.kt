@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 const val BACK_STACK = "BACK STACK"
 class MainActivity : AppCompatActivity() {
-    val viewModel by lazy { ViewModelProvider(this).get(MainViewModel::class.java) }
+    private val viewModel by lazy { ViewModelProvider(this).get(MainViewModel::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

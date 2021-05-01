@@ -11,7 +11,7 @@ import com.google.android.material.textfield.TextInputLayout
 
 class FragmentAddCharacter : Fragment() {
 
-    val viewModel: MainViewModel by lazy { ViewModelProvider(requireActivity()).get(MainViewModel::class.java) }
+    private val viewModel: MainViewModel by lazy { ViewModelProvider(requireActivity()).get(MainViewModel::class.java) }
     private lateinit var changeName: TextInputLayout
     private lateinit var changePhoto: TextInputLayout
     private lateinit var plusGames: TextInputLayout
