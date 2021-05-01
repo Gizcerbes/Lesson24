@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Рэйтинг персонажей</string>
+    <string name="url">Url</string>
+    <string name="update">Обновить</string>
+    <string name="add">Добавить</string>
+    <string name="name">Имя</string>
+    <string name="enter_count_of_wins">Введите кол-во побед</string>
+    <string name="enter_new_url_of_character_photo">Введите новый URL фото персонажа</string>
+    <string name="enter_count_of_games_you_played">Введите кол-во сыгранных игр</string>
+    <string name="enter_count_of_wins_you_made">Введите кол-во сделаных побед</string>
+    <string name="enter_count_of_kills_you_made">Введите кол-во совершённых убийств</string>
+    <string name="enter_count_of_kills">Введите кол-во убийств</string>
+    <string name="enter_count_of_games">Введите кол-во игр</string>
+    <string name="enter_url_of_character_photo">Введите URL фото персонажа</string>
+    <string name="enter_character_name">Введите имя персонажа</string>
+    <string name="add_a_new_character">Добавьте нового персонажа</string>
+    <string name="change_the_character">Измените данные персонажа</string>
+    <string name="percentageOfWins">Винрейт - </string>
+    <string name="percent">%</string>
+    <string name="KD">У/С - </string>
+    <string name="not_be_less_than_1">Не может быть меньше 1</string>
+    <string name="not_be_less_than_0">Не может быть меньше 0</string>
+    <string name="error_empty_field">Заполните поле</string>
+    <string name="back">Назад</string>
+    <string name="kills">Убийств - </string>
+</resources>

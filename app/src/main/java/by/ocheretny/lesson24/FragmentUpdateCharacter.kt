@@ -50,17 +50,15 @@ class FragmentUpdateCharacter : Fragment() {
                 character?.countKills?.plus(plusKills.editText?.text.toString().toInt())!!
             character?.countWins =
                 character?.countWins?.plus(plusWins.editText?.text.toString().toInt())!!
-            viewModel.updatesCharacter.value = character
+            activity?.supportFragmentManager?.popBackStack()
         }
 
-        view.findViewById<Button>(R.id.character_back_button).setOnClickListener {
-            viewModel.addCharacter.value = character
-        }
+
     }
 
     private fun verif(): Boolean {
         if (changePhoto.editText?.text.isNullOrEmpty()) {
-            changePhoto.editText?.error = getString(R.string.error_empty_url)
+            changePhoto.editText?.error = getString(R.string.error_empty_field)
         } else {
             changePhoto.editText?.error = null
         }
@@ -74,7 +72,7 @@ class FragmentUpdateCharacter : Fragment() {
             }
         } catch (e: NumberFormatException) {
             plusGames.editText?.error = getString(R.string.error_empty_field)
-        } catch (e :Exception){
+        } catch (e: Exception) {
             plusGames.editText?.error = e.toString()
         }
 
@@ -87,7 +85,7 @@ class FragmentUpdateCharacter : Fragment() {
             }
         } catch (e: NumberFormatException) {
             plusWins.editText?.error = getString(R.string.error_empty_field)
-        } catch (e :Exception){
+        } catch (e: Exception) {
             plusWins.editText?.error = e.toString()
         }
 
@@ -100,7 +98,7 @@ class FragmentUpdateCharacter : Fragment() {
             }
         } catch (e: NumberFormatException) {
             plusKills.editText?.error = getString(R.string.error_empty_field)
-        } catch (e :Exception){
+        } catch (e: Exception) {
             plusKills.editText?.error = e.toString()
         }
         return !changePhoto.editText?.error.isNullOrEmpty() ||
