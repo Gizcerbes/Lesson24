@@ -19,11 +19,6 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction().replace(R.id.container_main, FragmentUpdateCharacter()).addToBackStack(BACK_STACK).commit()
         }
 
-        viewModel.updatesCharacter.observe(this){
-            supportFragmentManager.beginTransaction().replace(R.id.container_main, FragmentShowRating()).commit()
-        }
-
-
         viewModel.openAddFragment.observe(this){
             supportFragmentManager.beginTransaction().replace(R.id.container_main, FragmentAddCharacter()).addToBackStack(BACK_STACK).commit()
         }
