@@ -23,4 +23,12 @@
     <string name="error_empty_field">Fill in the field</string>
     <string name="back">Back</string>
     <string name="kills">Kills - </string>
+    <string-array name="sort_array">
+        <item>Names</item>
+        <item>Count Games</item>
+        <item>Count Kills</item>
+        <item>Count Wins</item>
+        <item>Win Reit</item>
+        <item>kD</item>
+    </string-array>
 </resources>

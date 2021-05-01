@@ -32,6 +32,7 @@ class CharacterAdapter(val viewModel: MainViewModel) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
+        viewModel.characters.sortByDescending { it.name }
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.item_character, parent, false)
         return CharacterViewHolder(view)
