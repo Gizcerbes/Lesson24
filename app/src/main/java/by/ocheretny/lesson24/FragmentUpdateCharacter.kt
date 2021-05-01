@@ -33,9 +33,9 @@ class FragmentUpdateCharacter : Fragment() {
         plusGames = view.findViewById<TextInputLayout>(R.id.plus_games)
         plusWins = view.findViewById<TextInputLayout>(R.id.plus_wins)
         plusKills = view.findViewById<TextInputLayout>(R.id.plus_kills)
-        val character: Character? = viewModel.selectedCharacter.value
+        val character: Character = viewModel.selectedCharacter.value ?: Character("","")
 
-        changePhoto.editText?.setText(character?.photoURL)
+        changePhoto.editText?.setText(character.photoURL)
         plusGames.editText?.setText("0")
         plusWins.editText?.setText("0")
         plusKills.editText?.setText("0")
@@ -43,13 +43,11 @@ class FragmentUpdateCharacter : Fragment() {
         view.findViewById<Button>(R.id.character_update_button).setOnClickListener {
             if (verif()) return@setOnClickListener
 
-            character?.photoURL = changePhoto.editText?.text.toString()
-            character?.countGames =
-                character?.countGames?.plus(plusGames.editText?.text.toString().toInt())!!
-            character?.countKills =
-                character?.countKills?.plus(plusKills.editText?.text.toString().toInt())!!
-            character?.countWins =
-                character?.countWins?.plus(plusWins.editText?.text.toString().toInt())!!
+            character.photoURL = changePhoto.editText?.text.toString()
+            character.countGames += plusGames.editText?.text.toString().toInt()
+            character.countKills += plusKills.editText?.text.toString().toInt()
+            character.countWins += plusWins.editText?.text.toString().toInt()
+
             activity?.supportFragmentManager?.popBackStack()
         }
 
