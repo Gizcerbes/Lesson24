@@ -10,15 +10,17 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/change_photo"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="8dp"
+        android:hint="@string/url"
+        app:endIconMode="clear_text"
         app:helperText="@string/enter_new_url_of_character_photo"
-        app:layout_constraintBottom_toTopOf="@+id/plus_wins"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/plus_games">
+        app:layout_constraintStart_toEndOf="@+id/plus_games"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -28,15 +30,17 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/plus_games"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="8dp"
+        android:hint="@string/count_games"
+        app:endIconMode="clear_text"
         app:helperText="@string/enter_count_of_games_you_played"
-        app:layout_constraintBottom_toTopOf="@+id/plus_kills"
         app:layout_constraintEnd_toStartOf="@+id/change_photo"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -47,16 +51,18 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/plus_wins"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="8dp"
         android:layout_marginBottom="8dp"
+        android:hint="@string/count_wins"
+        app:endIconMode="clear_text"
         app:helperText="@string/enter_count_of_wins_you_made"
-        app:layout_constraintBottom_toTopOf="@+id/character_update_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/plus_kills">
+        app:layout_constraintStart_toEndOf="@+id/plus_kills"
+        app:layout_constraintTop_toBottomOf="@+id/change_photo">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -67,16 +73,18 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/plus_kills"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="8dp"
         android:layout_marginBottom="8dp"
+        android:hint="@string/count_kills"
+        app:endIconMode="clear_text"
         app:helperText="@string/enter_count_of_kills_you_made"
-        app:layout_constraintBottom_toTopOf="@+id/character_update_button"
         app:layout_constraintEnd_toStartOf="@+id/plus_wins"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plus_games">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"

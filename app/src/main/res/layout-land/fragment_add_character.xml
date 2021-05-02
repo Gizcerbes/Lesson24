@@ -9,10 +9,12 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/change_name"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:hint="@string/name"
+        app:endIconMode="clear_text"
         app:helperText="@string/enter_character_name"
         app:layout_constraintBottom_toTopOf="@+id/plus_games"
         app:layout_constraintTop_toTopOf="parent"
@@ -27,12 +29,13 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/change_photo"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:hint="@string/url"
+        app:endIconMode="clear_text"
         app:helperText="@string/enter_url_of_character_photo"
-        app:layout_constraintBottom_toTopOf="@+id/plus_wins"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/plus_games"
@@ -46,14 +49,14 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/plus_games"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:hint="@string/count_games"
+        app:endIconMode="clear_text"
         app:helperText="@string/enter_count_of_games"
-        app:layout_constraintBottom_toTopOf="@+id/plus_wins"
         app:layout_constraintEnd_toStartOf="@+id/change_photo"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/change_name">
 
@@ -66,13 +69,14 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/plus_wins"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:hint="@string/count_wins"
+        app:endIconMode="clear_text"
         app:helperText="@string/enter_count_of_wins"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/character_add_button"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/plus_kills"
         app:layout_constraintTop_toBottomOf="@+id/change_photo">
@@ -86,12 +90,13 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/plus_kills"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:hint="@string/count_kills"
+        app:endIconMode="clear_text"
         app:helperText="@string/enter_count_of_kills"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/plus_wins"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,13 +111,11 @@
 
     <Button
         android:id="@+id/character_add_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:text="@string/add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/change_photo" />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
