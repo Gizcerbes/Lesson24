@@ -23,7 +23,6 @@
     <string name="error_empty_field">Fill in the field</string>
     <string name="back">Back</string>
     <string name="kills">Kills - </string>
-    <string name="sort">SORT</string>
     <string name="count_games">Count Games</string>
     <string name="count_wins">Count Wins</string>
     <string name="count_kills">Count Kills</string>
@@ -35,4 +34,5 @@
         <item>Win Reit</item>
         <item>kD</item>
     </string-array>
+    <string name="sort">SORT</string>
 </resources>

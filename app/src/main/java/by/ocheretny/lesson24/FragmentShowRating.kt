@@ -50,6 +50,8 @@ class FragmentShowRating : Fragment() {
             spinner.adapter = it
         }
 
+        viewModel.sort(spinner.selectedItemPosition)
+
         spinner.onItemSelectedListener = object:AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(p0: AdapterView<*>?) {
             }

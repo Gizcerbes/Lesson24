@@ -32,4 +32,7 @@
         <item>Рейтинг Побед</item>
         <item>У/C</item>
     </string-array>
+    <string name="count_games">Количество Игр</string>
+    <string name="count_wins">Количество Побед</string>
+    <string name="count_kills">Количество Килов</string>
 </resources>
