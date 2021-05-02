@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Рэйтинг персонажей</string>
+    <string name="app_name">Рейтинг персонажей</string>
     <string name="url">Url</string>
     <string name="update">Обновить</string>
     <string name="add">Добавить</string>
@@ -23,4 +23,13 @@
     <string name="error_empty_field">Заполните поле</string>
     <string name="back">Назад</string>
     <string name="kills">Убийств - </string>
+    <string name="sort">СОРТИРОВКА</string>
+    <string-array name="sort_array">
+        <item>Имя</item>
+        <item>Количество Игр</item>
+        <item>Количество Убийств</item>
+        <item>Количество Игр</item>
+        <item>Рейтинг Побед</item>
+        <item>У/C</item>
+    </string-array>
 </resources>

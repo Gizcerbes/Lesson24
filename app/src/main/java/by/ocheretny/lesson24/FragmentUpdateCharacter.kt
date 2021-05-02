@@ -29,13 +29,13 @@ class FragmentUpdateCharacter : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        changePhoto = view.findViewById<TextInputLayout>(R.id.change_photo)
-        plusGames = view.findViewById<TextInputLayout>(R.id.plus_games)
-        plusWins = view.findViewById<TextInputLayout>(R.id.plus_wins)
-        plusKills = view.findViewById<TextInputLayout>(R.id.plus_kills)
+        changePhoto = view.findViewById(R.id.change_photo)
+        plusGames = view.findViewById(R.id.plus_games)
+        plusWins = view.findViewById(R.id.plus_wins)
+        plusKills = view.findViewById(R.id.plus_kills)
         val character: Character = viewModel.selectedCharacter.value ?: Character("","")
 
-        changePhoto.editText?.setText(character.photoURL)
+        changePhoto.editText?.setText(character.photoURL.toString())
         plusGames.editText?.setText("0")
         plusWins.editText?.setText("0")
         plusKills.editText?.setText("0")

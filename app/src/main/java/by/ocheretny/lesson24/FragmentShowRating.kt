@@ -5,9 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -23,7 +24,7 @@ class FragmentShowRating : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.frafment_show_rating, container, false)
+        return inflater.inflate(R.layout.fragment_show_rating, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,7 +37,7 @@ class FragmentShowRating : Fragment() {
         recycler.adapter = charactersAdapter
 
         view.findViewById<FloatingActionButton>(R.id.floating_action_button).setOnClickListener {
-            viewModel.openAddFragment.value = Unit
+            findNavController().navigate(R.id.navigation_add_character)
         }
 
         val spinner: Spinner = view.findViewById(R.id.sort_spinner)

@@ -14,6 +14,4 @@ class MainViewModel : ViewModel() {
 
     val selectedCharacter = MutableLiveData<Character>()
 
-    val openAddFragment = MutableLiveData<Unit>()
-
 }

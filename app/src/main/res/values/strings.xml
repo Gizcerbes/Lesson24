@@ -23,6 +23,7 @@
     <string name="error_empty_field">Fill in the field</string>
     <string name="back">Back</string>
     <string name="kills">Kills - </string>
+    <string name="sort">SORT</string>
     <string-array name="sort_array">
         <item>Names</item>
         <item>Count Games</item>

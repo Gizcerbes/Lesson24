@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
@@ -27,6 +28,7 @@ class CharacterAdapter(val viewModel: MainViewModel) :
             itemView.findViewById<TextView>(R.id.kills_deaths).text = "${view.context.getString(R.string.KD)} ${String.format("%.2f", character.kD)}  "
             itemView.findViewById<ConstraintLayout>(R.id.character_container).setOnClickListener {
                 viewModel.selectedCharacter.value = character
+                view.findNavController().navigate(R.id.navigation_update_character)
             }
         }
     }
