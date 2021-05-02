@@ -15,7 +15,7 @@
     <string name="enter_character_name">Enter character name</string>
     <string name="add_a_new_character">Add a new character</string>
     <string name="change_the_character">Change data of the character</string>
-    <string name="percentageOfWins">Winrate - </string>
+    <string name="percentageOfWins">WinReit - </string>
     <string name="percent">%</string>
     <string name="KD">K/D - </string>
     <string name="not_be_less_than_1">Cannot be less than 1</string>
@@ -26,13 +26,14 @@
     <string name="count_games">Count Games</string>
     <string name="count_wins">Count Wins</string>
     <string name="count_kills">Count Kills</string>
+    <string name="sort">SORT</string>
     <string-array name="sort_array">
         <item>Names</item>
         <item>Count Games</item>
         <item>Count Kills</item>
         <item>Count Wins</item>
         <item>Win Reit</item>
-        <item>kD</item>
+        <item>K/D</item>
     </string-array>
-    <string name="sort">SORT</string>
+
 </resources>

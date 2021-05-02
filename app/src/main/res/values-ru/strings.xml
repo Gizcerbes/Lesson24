@@ -24,6 +24,9 @@
     <string name="back">Назад</string>
     <string name="kills">Убийств - </string>
     <string name="sort">СОРТИРОВКА</string>
+    <string name="count_games">Количество Игр</string>
+    <string name="count_wins">Количество Побед</string>
+    <string name="count_kills">Количество Килов</string>
     <string-array name="sort_array">
         <item>Имя</item>
         <item>Количество Игр</item>
@@ -32,7 +35,5 @@
         <item>Рейтинг Побед</item>
         <item>У/C</item>
     </string-array>
-    <string name="count_games">Количество Игр</string>
-    <string name="count_wins">Количество Побед</string>
-    <string name="count_kills">Количество Килов</string>
+
 </resources>
