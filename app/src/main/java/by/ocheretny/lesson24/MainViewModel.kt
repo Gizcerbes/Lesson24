@@ -14,4 +14,14 @@ class MainViewModel : ViewModel() {
 
     val selectedCharacter = MutableLiveData<Character>()
 
+    fun sort(code:Int){
+        when(code){
+            0 -> characters.sortByDescending { it.name }
+            1 -> characters.sortByDescending { it.countGames }
+            2 -> characters.sortByDescending { it.countKills }
+            3 -> characters.sortByDescending { it.countWins }
+            4 -> characters.sortByDescending { it.winReit }
+            5 -> characters.sortByDescending { it.kD }
+        }
+    }
 }
