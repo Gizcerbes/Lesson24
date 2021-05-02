@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 const val BACK_STACK = "BACK STACK"
 class MainActivity : AppCompatActivity() {
-    val viewModel by lazy { ViewModelProvider(this).get(MainViewModel::class.java) }
+    private val viewModel by lazy { ViewModelProvider(this).get(MainViewModel::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,11 +18,6 @@ class MainActivity : AppCompatActivity() {
         viewModel.selectedCharacter.observe(this){
             supportFragmentManager.beginTransaction().replace(R.id.container_main, FragmentUpdateCharacter()).addToBackStack(BACK_STACK).commit()
         }
-
-        viewModel.updatesCharacter.observe(this){
-            supportFragmentManager.beginTransaction().replace(R.id.container_main, FragmentShowRating()).commit()
-        }
-
 
         viewModel.openAddFragment.observe(this){
             supportFragmentManager.beginTransaction().replace(R.id.container_main, FragmentAddCharacter()).addToBackStack(BACK_STACK).commit()

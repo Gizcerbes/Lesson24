@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -11,7 +12,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class FragmentShowRating : Fragment() {
-    val viewModel: MainViewModel by lazy { ViewModelProvider(requireActivity()).get(MainViewModel::class.java) }
+    private val viewModel: MainViewModel by lazy {
+        ViewModelProvider(requireActivity()).get(
+            MainViewModel::class.java
+        )
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -33,6 +39,32 @@ class FragmentShowRating : Fragment() {
             viewModel.openAddFragment.value = Unit
         }
 
+        val spinner: Spinner = view.findViewById(R.id.sort_spinner)
+        ArrayAdapter.createFromResource(
+            view.context,
+            R.array.sort_array,
+            android.R.layout.simple_spinner_item
+        ).also {
+            it.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            spinner.adapter = it
+        }
+
+        spinner.onItemSelectedListener = object:AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+            }
+
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                when(p2){
+                    0 -> viewModel.characters.sortByDescending { it.name }
+                    1 -> viewModel.characters.sortByDescending { it.countGames }
+                    2 -> viewModel.characters.sortByDescending { it.countKills }
+                    3 -> viewModel.characters.sortByDescending { it.countWins }
+                    4 -> viewModel.characters.sortByDescending { it.winReit }
+                    5 -> viewModel.characters.sortByDescending { it.kD }
+                }
+                charactersAdapter.notifyDataSetChanged()
+            }
+        }
     }
 
 
