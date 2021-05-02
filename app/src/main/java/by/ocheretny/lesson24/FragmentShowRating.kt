@@ -5,9 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -23,7 +24,7 @@ class FragmentShowRating : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.frafment_show_rating, container, false)
+        return inflater.inflate(R.layout.fragment_show_rating, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,7 +37,7 @@ class FragmentShowRating : Fragment() {
         recycler.adapter = charactersAdapter
 
         view.findViewById<FloatingActionButton>(R.id.floating_action_button).setOnClickListener {
-            viewModel.openAddFragment.value = Unit
+            findNavController().navigate(R.id.navigation_add_character)
         }
 
         val spinner: Spinner = view.findViewById(R.id.sort_spinner)
@@ -49,19 +50,14 @@ class FragmentShowRating : Fragment() {
             spinner.adapter = it
         }
 
+        viewModel.sort(spinner.selectedItemPosition)
+
         spinner.onItemSelectedListener = object:AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(p0: AdapterView<*>?) {
             }
 
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                when(p2){
-                    0 -> viewModel.characters.sortByDescending { it.name }
-                    1 -> viewModel.characters.sortByDescending { it.countGames }
-                    2 -> viewModel.characters.sortByDescending { it.countKills }
-                    3 -> viewModel.characters.sortByDescending { it.countWins }
-                    4 -> viewModel.characters.sortByDescending { it.winReit }
-                    5 -> viewModel.characters.sortByDescending { it.kD }
-                }
+                viewModel.sort(p2)
                 charactersAdapter.notifyDataSetChanged()
             }
         }

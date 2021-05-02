@@ -30,11 +30,11 @@ class FragmentAddCharacter : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        changeName = view.findViewById<TextInputLayout>(R.id.change_name)
-        changePhoto = view.findViewById<TextInputLayout>(R.id.change_photo)
-        plusGames = view.findViewById<TextInputLayout>(R.id.plus_games)
-        plusWins = view.findViewById<TextInputLayout>(R.id.plus_wins)
-        plusKills = view.findViewById<TextInputLayout>(R.id.plus_kills)
+        changeName = view.findViewById(R.id.change_name)
+        changePhoto = view.findViewById(R.id.change_photo)
+        plusGames = view.findViewById(R.id.plus_games)
+        plusWins = view.findViewById(R.id.plus_wins)
+        plusKills = view.findViewById(R.id.plus_kills)
 
         view.findViewById<Button>(R.id.character_add_button).setOnClickListener {
             if (verif()) return@setOnClickListener
