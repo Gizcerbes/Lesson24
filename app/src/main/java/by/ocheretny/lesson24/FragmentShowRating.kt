@@ -55,7 +55,7 @@ class FragmentShowRating : Fragment() {
 
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 when(p2){
-                    0 -> viewModel.characters.sortByDescending { it.name }
+                    0 -> viewModel.characters.sortBy { it.name }
                     1 -> viewModel.characters.sortByDescending { it.countGames }
                     2 -> viewModel.characters.sortByDescending { it.countKills }
                     3 -> viewModel.characters.sortByDescending { it.countWins }

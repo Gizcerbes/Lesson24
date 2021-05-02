@@ -23,4 +23,12 @@
     <string name="error_empty_field">Заполните поле</string>
     <string name="back">Назад</string>
     <string name="kills">Убийств - </string>
+    <string-array name="sort_array">
+        <item>Имя</item>
+        <item>Кол-во игр</item>
+        <item>Кол-во убийств</item>
+        <item>Кол-во побед</item>
+        <item>Винрейт</item>
+        <item>У/С</item>
+    </string-array>
 </resources>
