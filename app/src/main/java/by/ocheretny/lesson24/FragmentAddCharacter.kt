@@ -49,23 +49,20 @@ class FragmentAddCharacter : Fragment() {
             )
 
             viewModel.characters.add(character)
-            viewModel.addCharacter.value = character
+            activity?.supportFragmentManager?.popBackStack()
         }
 
-        view.findViewById<Button>(R.id.character_back_button).setOnClickListener {
-            viewModel.addCharacter.value = Character("", "")
-        }
     }
 
-    private fun verif() : Boolean{
+    private fun verif(): Boolean {
         if (changeName.editText?.text.isNullOrEmpty()) {
-            changeName.editText?.error = getString(R.string.error_empty_name)
+            changeName.editText?.error = getString(R.string.error_empty_field)
         } else {
             changeName.editText?.error = null
         }
 
         if (changePhoto.editText?.text.isNullOrEmpty()) {
-            changePhoto.editText?.error = getString(R.string.error_empty_url)
+            changePhoto.editText?.error = getString(R.string.error_empty_field)
         } else {
             changePhoto.editText?.error = null
         }
@@ -79,7 +76,7 @@ class FragmentAddCharacter : Fragment() {
             }
         } catch (e: NumberFormatException) {
             plusGames.editText?.error = getString(R.string.error_empty_field)
-        } catch (e :Exception){
+        } catch (e: Exception) {
             plusGames.editText?.error = e.toString()
         }
 
@@ -93,7 +90,7 @@ class FragmentAddCharacter : Fragment() {
             }
         } catch (e: NumberFormatException) {
             plusWins.editText?.error = getString(R.string.error_empty_field)
-        } catch (e :Exception){
+        } catch (e: Exception) {
             plusWins.editText?.error = e.toString()
         }
 
@@ -106,16 +103,15 @@ class FragmentAddCharacter : Fragment() {
             }
         } catch (e: NumberFormatException) {
             plusKills.editText?.error = getString(R.string.error_empty_field)
-        } catch (e :Exception){
+        } catch (e: Exception) {
             plusKills.editText?.error = e.toString()
         }
-        return  !changeName.editText?.error.isNullOrEmpty() ||
+        return !changeName.editText?.error.isNullOrEmpty() ||
                 !changePhoto.editText?.error.isNullOrEmpty() ||
                 !plusGames.editText?.error.isNullOrEmpty() ||
                 !plusWins.editText?.error.isNullOrEmpty() ||
                 !plusKills.editText?.error.isNullOrEmpty()
     }
-
 
 
 }
