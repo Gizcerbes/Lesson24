@@ -88,7 +88,7 @@
                 app:endIconMode="clear_text"
                 app:helperText="@string/enter_count_of_wins"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
+                android:layout_marginLeft="@dimen/standart_padding"
                 app:layout_constraintStart_toEndOf="@+id/plus_kills"
                 app:layout_constraintTop_toBottomOf="@+id/change_photo">
 
@@ -104,7 +104,6 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/standart_padding"
                 android:layout_marginRight="@dimen/standart_padding"
                 android:hint="@string/count_kills"
                 app:endIconMode="clear_text"
