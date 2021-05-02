@@ -18,8 +18,7 @@ class CharacterAdapter(val viewModel: MainViewModel) :
 
     inner class CharacterViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         @SuppressLint("SetTextI18n")
-        fun setData(itemView: View, position: Int) {
-            val character = viewModel.characters[position]
+        fun setData(itemView: View, character: Character) {
             Picasso.get().load(character.photoURL)
                 .into(itemView.findViewById<ImageView>(R.id.photo))
             itemView.findViewById<TextView>(R.id.name).text = character.name
@@ -34,14 +33,13 @@ class CharacterAdapter(val viewModel: MainViewModel) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
-        viewModel.characters.sortByDescending { it.name }
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.item_character, parent, false)
         return CharacterViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
-        holder.setData(holder.itemView, position)
+        holder.setData(holder.itemView, viewModel.characters.get(position))
     }
 
     override fun getItemCount(): Int {
