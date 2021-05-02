@@ -55,7 +55,7 @@ class FragmentShowRating : Fragment() {
             }
 
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-
+                viewModel.sort(p2)
                 charactersAdapter.notifyDataSetChanged()
             }
         }
